@@ -1,0 +1,15 @@
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\bin\Debug\Tester.exe.config
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\bin\Debug\Tester.exe
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\bin\Debug\Tester.pdb
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Main.resources
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.exe.licenses
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.exe
+c:\users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.pdb
+C:\Users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Program1.resources
+C:\Users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Tests.resources
+C:\Users\dragon116\Source\Repos\Tester\Tester\bin\Debug\Tester.exe.config
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.exe
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.pdb

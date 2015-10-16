@@ -13,3 +13,12 @@ C:\Users\dragon116\documents\visual studio 2015\Projects\Tester\Tester\obj\Debug
 C:\Users\dragon116\Source\Repos\Tester\Tester\bin\Debug\Tester.exe.config
 C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.exe
 C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.pdb
+C:\Users\dragon116\Source\Repos\Tester\Tester\bin\Debug\Tester.exe
+C:\Users\dragon116\Source\Repos\Tester\Tester\bin\Debug\Tester.pdb
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.Main.resources
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.Program1.resources
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.Tests.resources
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+C:\Users\dragon116\Source\Repos\Tester\Tester\obj\Debug\Tester.exe.licenses

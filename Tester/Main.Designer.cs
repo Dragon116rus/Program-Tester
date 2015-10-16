@@ -31,8 +31,8 @@
             this.testing = new System.Windows.Forms.Button();
             this.tests = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.radListView1 = new Telerik.WinControls.UI.RadListView();
-            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).BeginInit();
+            this.testResultList = new Telerik.WinControls.UI.RadListView();
+            ((System.ComponentModel.ISupportInitialize)(this.testResultList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,20 +66,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radListView1
+            // testResultList
             // 
-            this.radListView1.Location = new System.Drawing.Point(13, 43);
-            this.radListView1.Name = "radListView1";
-            this.radListView1.Size = new System.Drawing.Size(239, 209);
-            this.radListView1.TabIndex = 3;
-            this.radListView1.Text = "radListView1";
+            this.testResultList.Location = new System.Drawing.Point(13, 43);
+            this.testResultList.Name = "testResultList";
+            this.testResultList.Size = new System.Drawing.Size(239, 209);
+            this.testResultList.TabIndex = 3;
+            this.testResultList.Text = "radListView1";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(279, 264);
-            this.Controls.Add(this.radListView1);
+            this.Controls.Add(this.testResultList);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tests);
             this.Controls.Add(this.testing);
@@ -89,7 +89,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.radListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testResultList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -100,6 +100,6 @@
         private System.Windows.Forms.Button testing;
         private System.Windows.Forms.Button tests;
         private System.Windows.Forms.Button button1;
-        private Telerik.WinControls.UI.RadListView radListView1;
+        private Telerik.WinControls.UI.RadListView testResultList;
     }
 }

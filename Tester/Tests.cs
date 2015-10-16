@@ -13,7 +13,8 @@ namespace Tester {
         public Tests() {
             InitializeComponent();
             foreach(var name in Directory.GetFiles("tests")) {
-                TestsList.Items.Add(name);
+                if (File.Exists(name+"a"))
+                    TestsList.Items.Add(name);
             }
         }
 
@@ -24,6 +25,9 @@ namespace Tester {
             }
             using (StreamWriter sw=new StreamWriter(string.Format("tests/test{0}", i))) {
                 sw.Write(test.Text);
+            }
+            using (StreamWriter sw=new StreamWriter(string.Format("tests/test{0}a",i))) {
+                sw.Write(answer.Text);
             }
             TestsList.Items.Add(string.Format("test{0}", i));
             

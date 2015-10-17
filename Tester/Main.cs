@@ -43,6 +43,25 @@ namespace Tester {
 
             cmd.StandardInput.WriteLine(compiler + @" program.cpp");
             int i = 1;
+            Process program = new Process();
+            program.StartInfo = new ProcessStartInfo(@"a.exe");
+
+            program.StartInfo.RedirectStandardInput = true;// перенаправить вход
+            program.StartInfo.RedirectStandardOutput = true;//перенаправить выход
+            program.StartInfo.UseShellExecute = false;//обязательный параметр, для работы предыдущих
+            program.Start();
+            program.StandardInput.WriteLine("332");
+            using (StreamWriter sw = new StreamWriter("1.txt")) {
+                sw.Write(program.StandardOutput.ReadToEnd());
+            }
+            //cmd.StandardInput.WriteLine(string.Format("a.exe < tests/test{0} > check"),i);
+            //using (StreamReader srCheck=new StreamReader("check")) {
+            //    using (StreamReader srAnswer= new StreamReader(string.Format("tests/answer{0}", i)))
+            //        ;
+            //}
+            //i++;
+            program.Close();
+            MessageBox.Show("finish");
             while ((File.Exists(string.Format("tests/test{0}", i)))&& (File.Exists(string.Format("tests/test{0}a", i)))) {
                 StreamReader sr = cmd.StandardOutput;
                 cmd.StandardInput.WriteLine(String.Format("a.exe < tests/test{0} > testAnswer", i));

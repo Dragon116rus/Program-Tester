@@ -28,9 +28,9 @@ namespace Tester {
         }
 
         private void testing_Click(object sender, EventArgs e) {
-               Thread thread = new Thread(Testing);
+            Thread thread = new Thread(Testing);
             thread.Start();
-           // Testing();
+            // Testing();
         }
         void Testing() {
             Process cmd = new Process();
@@ -38,47 +38,43 @@ namespace Tester {
             cmd.StartInfo.RedirectStandardInput = true;// перенаправить вход
             cmd.StartInfo.RedirectStandardOutput = true;//перенаправить выход
             cmd.StartInfo.UseShellExecute = false;//обязательный параметр, для работы предыдущих
-                                                  //     cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.CreateNoWindow = true;
             cmd.Start();
 
             cmd.StandardInput.WriteLine(compiler + @" program.cpp");
+            cmd.StandardInput.WriteLine("exit");
+            cmd.Close();
             int i = 1;
+
+
             Process program = new Process();
-            program.StartInfo = new ProcessStartInfo(@"a.exe");
-
-            program.StartInfo.RedirectStandardInput = true;// перенаправить вход
-            program.StartInfo.RedirectStandardOutput = true;//перенаправить выход
-            program.StartInfo.UseShellExecute = false;//обязательный параметр, для работы предыдущих
-            program.Start();
-            program.StandardInput.WriteLine("332");
-            using (StreamWriter sw = new StreamWriter("1.txt")) {
-                sw.Write(program.StandardOutput.ReadToEnd());
-            }
-            //cmd.StandardInput.WriteLine(string.Format("a.exe < tests/test{0} > check"),i);
-            //using (StreamReader srCheck=new StreamReader("check")) {
-            //    using (StreamReader srAnswer= new StreamReader(string.Format("tests/answer{0}", i)))
-            //        ;
-            //}
-            //i++;
-            program.Close();
-            MessageBox.Show("finish");
-            while ((File.Exists(string.Format("tests/test{0}", i)))&& (File.Exists(string.Format("tests/test{0}a", i)))) {
-                StreamReader sr = cmd.StandardOutput;
-                cmd.StandardInput.WriteLine(String.Format("a.exe < tests/test{0} > testAnswer", i));
-
-                Thread.Sleep(1000);
+            while ((File.Exists(string.Format("tests/test{0}", i))) && (File.Exists(string.Format("tests/test{0}a", i)))) {
 
 
+
+                program.StartInfo = new ProcessStartInfo(@"a.exe");
+
+                program.StartInfo.RedirectStandardInput = true;// перенаправить вход
+                program.StartInfo.RedirectStandardOutput = true;//перенаправить выход
+                program.StartInfo.UseShellExecute = false;//обязательный параметр, для работы предыдущих
+                program.StartInfo.CreateNoWindow = true;
+                program.Start();
+                //  program.StandardInput.WriteLine(String.Format("a.exe < tests/test{0} > testAnswer", i));
+                using (StreamReader srTest = new StreamReader(String.Format("tests/test{0}", i))) {
+                    program.StandardInput.WriteLine(srTest.ReadToEnd());
+                }
+
+                StreamReader sr = program.StandardOutput;
                 Invoke((MethodInvoker)delegate { testResultList.Items.Add(string.Format("{0}:{1}", i, Checker(string.Format("tests/test{0}a", i), sr))); });
                 ;
 
-                sr.Close();
+                program.Close();
                 i++;
             }
             cmd.Close();
         }
         string Checker(string path, StreamReader sr) {
-            sr = new StreamReader("testAnswer");
+
             StreamReader srAnswer = new StreamReader(path);
 
             string[] answer = srAnswer.ReadToEnd().Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);

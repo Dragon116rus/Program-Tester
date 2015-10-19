@@ -65,6 +65,9 @@ namespace Tester {
                 }
 
                 StreamReader sr = program.StandardOutput;
+                
+                
+               
                 Invoke((MethodInvoker)delegate { testResultList.Items.Add(string.Format("{0}:{1}", i, Checker(string.Format("tests/test{0}a", i), sr))); });
                 ;
 
@@ -89,19 +92,7 @@ namespace Tester {
             sr.Close();
             srAnswer.Close();
             return "true";
-            //   
-
-
         }
-        bool CanOpenFile(string path) {
-            FileStream f;
-            try {
-                f = new FileStream(path, FileMode.Open);
-
-            }
-            catch (System.IO.IOException) { return false; }
-            f.Close();
-            return true;
-        }
+ 
     }
 }

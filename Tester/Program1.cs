@@ -15,6 +15,19 @@ namespace Tester
         public Program1()
         {
             InitializeComponent();
+
+         
+            using (StreamReader sw = new StreamReader("program.cpp")) {
+       
+                
+                programText.Document.LineSpacing=0.5 ;
+                programText.ChangeFontSize(10);
+                programText.ChangeFontFamily(new Telerik.WinControls.RichTextEditor.UI.FontFamily("Calibri"));
+                
+                programText.Insert(  sw.ReadToEnd());
+                
+            }
+            
         }
 
         private void save_Click(object sender, EventArgs e) {

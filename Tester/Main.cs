@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Telerik.WinControls;
+using Telerik.WinControls.UI;
 
 namespace Tester {
     public partial class Main : Telerik.WinControls.UI.RadForm {
         internal string compiler = "g++";
         public Main() {
             InitializeComponent();
+            testResultList.MultiSelect = false;
+            
         }
 
         private void button1_Click(object sender, EventArgs e) {
@@ -30,7 +33,6 @@ namespace Tester {
         private void testing_Click(object sender, EventArgs e) {
             Thread thread = new Thread(Testing);
             thread.Start();
-            // Testing();
         }
         void Testing() {
             Process cmd = new Process();
@@ -49,50 +51,53 @@ namespace Tester {
 
             Process program = new Process();
             while ((File.Exists(string.Format("tests/test{0}", i))) && (File.Exists(string.Format("tests/test{0}a", i)))) {
-
-
-
                 program.StartInfo = new ProcessStartInfo(@"a.exe");
-
                 program.StartInfo.RedirectStandardInput = true;// перенаправить вход
                 program.StartInfo.RedirectStandardOutput = true;//перенаправить выход
                 program.StartInfo.UseShellExecute = false;//обязательный параметр, для работы предыдущих
                 program.StartInfo.CreateNoWindow = true;
                 program.Start();
-                //  program.StandardInput.WriteLine(String.Format("a.exe < tests/test{0} > testAnswer", i));
                 using (StreamReader srTest = new StreamReader(String.Format("tests/test{0}", i))) {
                     program.StandardInput.WriteLine(srTest.ReadToEnd());
                 }
 
                 StreamReader sr = program.StandardOutput;
-                
-                
-               
-                Invoke((MethodInvoker)delegate { testResultList.Items.Add(string.Format("{0}:{1}", i, Checker(string.Format("tests/test{0}a", i), sr))); });
-                ;
+                Invoke((MethodInvoker)delegate {
+                    testResultList.Items.Add(Checker(string.Format("tests/test{0}a", i), sr));
+                });
 
                 program.Close();
                 i++;
             }
             cmd.Close();
         }
-        string Checker(string path, StreamReader sr) {
-
+        ListViewDataItem Checker(string path, StreamReader sr) {
+            var item = new ListViewDataItem();
             StreamReader srAnswer = new StreamReader(path);
-
+           
             string[] answer = srAnswer.ReadToEnd().Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             string[] trueAnswer = sr.ReadToEnd().Split(new char[] { ' ', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             if (trueAnswer.Length < answer.Length) {
-                return "Error:a different number of characters";
+                item.BackColor = Color.Red;
+                item.Text = "Error:a different number of characters";
+                return item;
             }
             for (int i = 0; i < trueAnswer.Length; i++) {
-                if (trueAnswer[i] != answer[i])
-                    return "Error:different value";
+                if (trueAnswer[i] != answer[i]) {
+                    item.BackColor = Color.FromArgb(255, 58, 31);
+                    item.GradientStyle = GradientStyles.Solid;
+                    item.Text = "Error:different value";
+                    return item;
+                }
             }
             sr.Close();
             srAnswer.Close();
-            return "true";
+            item.BackColor = Color.GreenYellow;
+            item.GradientStyle = GradientStyles.Solid;
+            item.Text = "true";
+            return item;
+
         }
- 
+
     }
 }

@@ -32,6 +32,7 @@
             this.tests = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.testResultList = new Telerik.WinControls.UI.RadListView();
+            this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             ((System.ComponentModel.ISupportInitialize)(this.testResultList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
@@ -68,11 +69,15 @@
             // 
             // testResultList
             // 
-            this.testResultList.Location = new System.Drawing.Point(13, 43);
+            this.testResultList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.testResultList.Location = new System.Drawing.Point(12, 41);
             this.testResultList.Name = "testResultList";
-            this.testResultList.Size = new System.Drawing.Size(239, 209);
+            this.testResultList.Size = new System.Drawing.Size(255, 211);
             this.testResultList.TabIndex = 3;
             this.testResultList.Text = "radListView1";
+            this.testResultList.ThemeName = "VisualStudio2012Dark";
             // 
             // Main
             // 
@@ -88,7 +93,8 @@
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Main";
+            this.Text = "Tester";
+            this.ThemeName = "VisualStudio2012Dark";
             ((System.ComponentModel.ISupportInitialize)(this.testResultList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
@@ -101,5 +107,6 @@
         private System.Windows.Forms.Button tests;
         private System.Windows.Forms.Button button1;
         private Telerik.WinControls.UI.RadListView testResultList;
+        private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
     }
 }

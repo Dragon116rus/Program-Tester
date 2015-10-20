@@ -11,7 +11,7 @@ using Telerik.WinControls;
 namespace Tester {
     public partial class Tests : Telerik.WinControls.UI.RadForm {
         public Tests() {
-            InitializeComponent();
+            InitializeComponent();           
             foreach(var name in Directory.GetFiles("tests")) {
                 if (File.Exists(name+"a"))
                     TestsList.Items.Add(name);

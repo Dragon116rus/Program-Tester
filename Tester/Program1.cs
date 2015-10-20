@@ -22,10 +22,11 @@ namespace Tester
                 
                 programText.Document.LineSpacing=0.5 ;
                 programText.ChangeFontSize(10);
-                programText.ChangeFontFamily(new Telerik.WinControls.RichTextEditor.UI.FontFamily("Calibri"));
-                
-                programText.Insert(  sw.ReadToEnd());
-                
+                programText.ChangeFontFamily(new Telerik.WinControls.RichTextEditor.UI.FontFamily("Arial"));
+                programText.BorderColor = Color.DarkOrange;
+                programText.ChangeTextForeColor(Color.DarkOrange);
+                programText.Insert(sw.ReadToEnd());
+              
             }
             
         }

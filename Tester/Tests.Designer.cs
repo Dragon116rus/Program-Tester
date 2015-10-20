@@ -33,6 +33,7 @@
             this.Create = new Telerik.WinControls.UI.RadButton();
             this.Delete = new Telerik.WinControls.UI.RadButton();
             this.answer = new Telerik.WinControls.UI.RadRichTextEditor();
+            this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
             ((System.ComponentModel.ISupportInitialize)(this.test)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Create)).BeginInit();
@@ -43,21 +44,26 @@
             // 
             // test
             // 
-            this.test.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(189)))), ((int)(((byte)(232)))));
+            this.test.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.test.CaretWidth = float.NaN;
+            this.test.ForeColor = System.Drawing.Color.DarkOrange;
             this.test.Location = new System.Drawing.Point(12, 12);
             this.test.Name = "test";
             this.test.SelectionFill = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(78)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.test.Size = new System.Drawing.Size(184, 138);
             this.test.TabIndex = 0;
+            this.test.ThemeName = "VisualStudio2012Dark";
             // 
             // TestsList
             // 
+            this.TestsList.BackColor = System.Drawing.Color.DimGray;
+            this.TestsList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.TestsList.Location = new System.Drawing.Point(203, 13);
             this.TestsList.Name = "TestsList";
             this.TestsList.Size = new System.Drawing.Size(120, 199);
             this.TestsList.TabIndex = 1;
             this.TestsList.Text = "radListView1";
+            this.TestsList.ThemeName = "VisualStudio2012Dark";
             // 
             // Create
             // 
@@ -66,6 +72,7 @@
             this.Create.Size = new System.Drawing.Size(110, 24);
             this.Create.TabIndex = 2;
             this.Create.Text = "Create";
+            this.Create.ThemeName = "VisualStudio2012Dark";
             this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
             // Delete
@@ -75,17 +82,20 @@
             this.Delete.Size = new System.Drawing.Size(110, 24);
             this.Delete.TabIndex = 3;
             this.Delete.Text = "Delete";
+            this.Delete.ThemeName = "VisualStudio2012Dark";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // answer
             // 
-            this.answer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(189)))), ((int)(((byte)(232)))));
+            this.answer.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.answer.CaretWidth = float.NaN;
+            this.answer.ForeColor = System.Drawing.Color.DarkOrange;
             this.answer.Location = new System.Drawing.Point(12, 156);
             this.answer.Name = "answer";
             this.answer.SelectionFill = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(78)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.answer.Size = new System.Drawing.Size(184, 57);
             this.answer.TabIndex = 4;
+            this.answer.ThemeName = "VisualStudio2012Dark";
             // 
             // Tests
             // 
@@ -97,12 +107,14 @@
             this.Controls.Add(this.Create);
             this.Controls.Add(this.TestsList);
             this.Controls.Add(this.test);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Name = "Tests";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Tests";
+            this.Text = "Тесты";
+            this.ThemeName = "VisualStudio2012Dark";
             ((System.ComponentModel.ISupportInitialize)(this.test)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Create)).EndInit();
@@ -120,5 +132,6 @@
         private Telerik.WinControls.UI.RadButton Create;
         private Telerik.WinControls.UI.RadButton Delete;
         private Telerik.WinControls.UI.RadRichTextEditor answer;
+        private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
     }
 }

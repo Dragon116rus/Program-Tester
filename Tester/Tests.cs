@@ -16,6 +16,8 @@ namespace Tester {
                 if (File.Exists(name+"a"))
                     TestsList.Items.Add(name);
             }
+            test.ChangeTextForeColor( Color.DarkOrange);
+            answer.ChangeTextForeColor(Color.DarkOrange);
         }
 
         private void Create_Click(object sender, EventArgs e) {
@@ -36,6 +38,29 @@ namespace Tester {
         private void Delete_Click(object sender, EventArgs e) {
             File.Delete(TestsList.SelectedItems[0].Text);
             TestsList.Items.Remove(TestsList.SelectedItems[0]);
+        }
+
+        private void TestsList_ItemMouseClick(object sender, Telerik.WinControls.UI.ListViewItemEventArgs e) {
+            using (StreamReader sw = new StreamReader(TestsList.SelectedItem.Text)) {
+                test.Text = "";
+                test.ChangeTextForeColor(Color.DarkOrange);
+                test.Insert(sw.ReadToEnd());
+            }
+            using (StreamReader sw = new StreamReader(TestsList.SelectedItem.Text + "a")) {
+                answer.Text = "";
+                answer.ChangeTextForeColor(Color.DarkOrange);
+                answer.Insert( sw.ReadToEnd());
+            }
+        }
+
+        private void ChangeTest_Click(object sender, EventArgs e) {
+
+            using (StreamWriter sw = new StreamWriter(string.Format(TestsList.SelectedItem.Text))) {
+                sw.Write(test.Text);
+            }
+            using (StreamWriter sw = new StreamWriter(string.Format("{0}a", TestsList.SelectedItem.Text))) {
+                sw.Write(answer.Text);
+            }
         }
     }
 }

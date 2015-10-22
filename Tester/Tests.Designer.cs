@@ -34,11 +34,13 @@
             this.Delete = new Telerik.WinControls.UI.RadButton();
             this.answer = new Telerik.WinControls.UI.RadRichTextEditor();
             this.visualStudio2012DarkTheme1 = new Telerik.WinControls.Themes.VisualStudio2012DarkTheme();
+            this.ChangeTest = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.test)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TestsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Create)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.answer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeTest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,24 +66,25 @@
             this.TestsList.TabIndex = 1;
             this.TestsList.Text = "radListView1";
             this.TestsList.ThemeName = "VisualStudio2012Dark";
+            this.TestsList.ItemMouseClick += new Telerik.WinControls.UI.ListViewItemEventHandler(this.TestsList_ItemMouseClick);
             // 
             // Create
             // 
             this.Create.Location = new System.Drawing.Point(13, 219);
             this.Create.Name = "Create";
-            this.Create.Size = new System.Drawing.Size(110, 24);
+            this.Create.Size = new System.Drawing.Size(88, 24);
             this.Create.TabIndex = 2;
-            this.Create.Text = "Create";
+            this.Create.Text = "Создать";
             this.Create.ThemeName = "VisualStudio2012Dark";
             this.Create.Click += new System.EventHandler(this.Create_Click);
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(203, 218);
+            this.Delete.Location = new System.Drawing.Point(203, 219);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(110, 24);
+            this.Delete.Size = new System.Drawing.Size(120, 24);
             this.Delete.TabIndex = 3;
-            this.Delete.Text = "Delete";
+            this.Delete.Text = "Удалить";
             this.Delete.ThemeName = "VisualStudio2012Dark";
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
@@ -97,11 +100,22 @@
             this.answer.TabIndex = 4;
             this.answer.ThemeName = "VisualStudio2012Dark";
             // 
+            // ChangeTest
+            // 
+            this.ChangeTest.Location = new System.Drawing.Point(107, 219);
+            this.ChangeTest.Name = "ChangeTest";
+            this.ChangeTest.Size = new System.Drawing.Size(88, 24);
+            this.ChangeTest.TabIndex = 5;
+            this.ChangeTest.Text = "Изменить";
+            this.ChangeTest.ThemeName = "VisualStudio2012Dark";
+            this.ChangeTest.Click += new System.EventHandler(this.ChangeTest_Click);
+            // 
             // Tests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(337, 270);
+            this.Controls.Add(this.ChangeTest);
             this.Controls.Add(this.answer);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Create);
@@ -120,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Create)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Delete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.answer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChangeTest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -132,6 +147,7 @@
         private Telerik.WinControls.UI.RadButton Create;
         private Telerik.WinControls.UI.RadButton Delete;
         private Telerik.WinControls.UI.RadRichTextEditor answer;
+        private Telerik.WinControls.UI.RadButton ChangeTest;
         private Telerik.WinControls.Themes.VisualStudio2012DarkTheme visualStudio2012DarkTheme1;
     }
 }

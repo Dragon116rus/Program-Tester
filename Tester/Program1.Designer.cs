@@ -63,8 +63,9 @@
             this.pathOfProgram.Name = "pathOfProgram";
             this.pathOfProgram.Size = new System.Drawing.Size(110, 24);
             this.pathOfProgram.TabIndex = 1;
-            this.pathOfProgram.Text = "pathOfProgram";
+            this.pathOfProgram.Text = "Загружать из файла";
             this.pathOfProgram.ThemeName = "VisualStudio2012Dark";
+            this.pathOfProgram.Click += new System.EventHandler(this.pathOfProgram_Click);
             // 
             // save
             // 
@@ -73,7 +74,7 @@
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(110, 24);
             this.save.TabIndex = 2;
-            this.save.Text = "save";
+            this.save.Text = "Сохранить";
             this.save.ThemeName = "VisualStudio2012Dark";
             this.save.Click += new System.EventHandler(this.save_Click);
             // 

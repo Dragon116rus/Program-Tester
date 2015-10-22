@@ -12,12 +12,13 @@ namespace Tester
 {
     public partial class Program1 : Telerik.WinControls.UI.RadForm
     {
-        public Program1()
+        public string programPath;
+        public Program1(string path)
         {
             InitializeComponent();
 
-         
-            using (StreamReader sw = new StreamReader("program.cpp")) {
+            programPath = path;
+            using (StreamReader sw = new StreamReader(programPath)) {
        
                 
                 programText.Document.LineSpacing=0.5 ;
@@ -33,8 +34,18 @@ namespace Tester
 
         private void save_Click(object sender, EventArgs e) {
             
-            using (StreamWriter sw = new StreamWriter("program.cpp")) {
+            using (StreamWriter sw = new StreamWriter(programPath)) {
                 sw.Write(programText.Text);
+            }
+        }
+
+        private void pathOfProgram_Click(object sender, EventArgs e) {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.ShowDialog();
+            programPath = ofd.FileName;
+            using(StreamReader sr=new StreamReader(programPath)) {
+                
+                programText.Insert(sr.ReadToEnd());
             }
         }
     }
